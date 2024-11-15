@@ -129,58 +129,58 @@ public class TankMode extends OpMode {
             robot.rightBackDrive.setPower(-1 / (speedSelected * 1.5));
         }
         
-        // // D-pad up raises arm
-        // else if ((gamepad1.dpad_up || gamepad2.dpad_up) 
-        //     && buttonPress == false && clawPosition < 4) {
-        //     clawPosition++;
-        //     if (clawPosition == 1) {
-        //         robot.extender.setTargetPosition(171);
-        //         robot.extender.setVelocity(armSpeed);
-        //         buttonPress = true;
-        //     }
-        //     else if (clawPosition == 2) {
-        //         robot.extender.setTargetPosition(1230);
-        //         robot.extender.setVelocity(armSpeed);
-        //         buttonPress = true;
-        //     }
-        //     else if (clawPosition == 3) {
-        //         robot.extender.setTargetPosition(2117);
-        //         robot.extender.setVelocity(armSpeed);
-        //         buttonPress = true;
-        //     }
-        //     else if (clawPosition == 4) {
-        //         robot.extender.setTargetPosition(2906);
-        //         robot.extender.setVelocity(armSpeed);
-        //         buttonPress = true;
-        //     }
-        // }
+        // D-pad up raises arm
+        else if ((gamepad1.dpad_up || gamepad2.dpad_up) 
+            && buttonPress == false && clawPosition < 4) {
+            clawPosition++;
+            if (clawPosition == 1) {
+                robot.extender.setTargetPosition(171);
+                robot.extender.setVelocity(armSpeed);
+                buttonPress = true;
+            }
+            else if (clawPosition == 2) {
+                robot.extender.setTargetPosition(1230);
+                robot.extender.setVelocity(armSpeed);
+                buttonPress = true;
+            }
+            else if (clawPosition == 3) {
+                robot.extender.setTargetPosition(2117);
+                robot.extender.setVelocity(armSpeed);
+                buttonPress = true;
+            }
+            else if (clawPosition == 4) {
+                robot.extender.setTargetPosition(2906);
+                robot.extender.setVelocity(armSpeed);
+                buttonPress = true;
+            }
+        }
         
-        // // D-pad down lowers arm
-        // else if ((gamepad1.dpad_down || gamepad2.dpad_down) &&
-        //     buttonPress == false && clawPosition > 0) {
-        //     clawPosition--;
-        //     if (clawPosition == 0) {
-        //         robot.extender.setTargetPosition(15);
-        //         robot.extender.setVelocity(armSpeed);
-        //         buttonPress = true;
-        //     }
-        //     else if (clawPosition == 1) {
-        //         robot.extender.setTargetPosition(171);
-        //         robot.extender.setVelocity(armSpeed);
-        //         buttonPress = true;
-        //     }
-        //     else if (clawPosition == 2) {
-        //         robot.extender.setTargetPosition(1230);
-        //         robot.extender.setVelocity(armSpeed);
-        //         buttonPress = true;
-        //     }
-        //     else if (clawPosition == 3) {
-        //         robot.extender.setTargetPosition(2117);
-        //         robot.extender.setVelocity(armSpeed);
-        //         buttonPress = true;
-        //     }
+        // D-pad down lowers arm
+        else if ((gamepad1.dpad_down || gamepad2.dpad_down) &&
+            buttonPress == false && clawPosition > 0) {
+            clawPosition--;
+            if (clawPosition == 0) {
+                robot.extender.setTargetPosition(15);
+                robot.extender.setVelocity(armSpeed);
+                buttonPress = true;
+            }
+            else if (clawPosition == 1) {
+                robot.extender.setTargetPosition(171);
+                robot.extender.setVelocity(armSpeed);
+                buttonPress = true;
+            }
+            else if (clawPosition == 2) {
+                robot.extender.setTargetPosition(1230);
+                robot.extender.setVelocity(armSpeed);
+                buttonPress = true;
+            }
+            else if (clawPosition == 3) {
+                robot.extender.setTargetPosition(2117);
+                robot.extender.setVelocity(armSpeed);
+                buttonPress = true;
+            }
             
-        // }
+        }
         
         // Right trigger manually adjusts the claw up
         else if (gamepad1.right_trigger > 0.5) {
