@@ -155,8 +155,6 @@ public class TankMode extends OpMode {
         else if (gamepad1.left_trigger > 0.5 ) {
             
             robot.extender.setPower(-0.01);
-            buttonPressUp = true;
-            buttonPressDown = false;
         }
 
         else if (gamepad1.dpad_left || gamepad2.dpad_left) {
