@@ -46,7 +46,7 @@ public class TankMode extends OpMode {
         robot.leftBackDrive.setPower(0);
         robot.rightFrontDrive.setPower(0);
         robot.rightBackDrive.setPower(0);
-        robot.extender.setPower(0);
+        // robot.extender.setPower(0);
         robot.servo1.setPosition(0.3);
         robot.servo2.setPosition(0.2);
         // robot.servo1.setPosition(0);
@@ -61,7 +61,7 @@ public class TankMode extends OpMode {
         robot.leftBackDrive.setPower(0);
         robot.rightFrontDrive.setPower(0);
         robot.rightBackDrive.setPower(0);
-        robot.extender.setPower(0);
+        // robot.extender.setPower(0);
         robot.servo1.setPosition(0.3);
         robot.servo2.setPosition(0.23);
         // robot.servo1.setPosition(0);
@@ -75,10 +75,6 @@ public class TankMode extends OpMode {
     
     // speedSelected: 4 = low, 2 = med, 1 = high
     int speedSelected = 2; // temp
-    
-    // Claw position and state. pos: 0=floor, 1=ground, 2=low, 3=medium, 4=high
-    int clawPosition = 0;
-    boolean clawOpen = false;
     
     // Code that runs repeatedly after the driver hits PLAY, but before they hit STOP
     @Override
@@ -129,58 +125,7 @@ public class TankMode extends OpMode {
             robot.rightBackDrive.setPower(-1 / (speedSelected * 1.5));
         }
         
-        // D-pad up raises arm
-        else if ((gamepad1.dpad_up || gamepad2.dpad_up) 
-            && buttonPress == false && clawPosition < 4) {
-            clawPosition++;
-            if (clawPosition == 1) {
-                robot.extender.setTargetPosition(171);
-                robot.extender.setVelocity(armSpeed);
-                buttonPress = true;
-            }
-            else if (clawPosition == 2) {
-                robot.extender.setTargetPosition(1230);
-                robot.extender.setVelocity(armSpeed);
-                buttonPress = true;
-            }
-            else if (clawPosition == 3) {
-                robot.extender.setTargetPosition(2117);
-                robot.extender.setVelocity(armSpeed);
-                buttonPress = true;
-            }
-            else if (clawPosition == 4) {
-                robot.extender.setTargetPosition(2906);
-                robot.extender.setVelocity(armSpeed);
-                buttonPress = true;
-            }
-        }
-        
-        // D-pad down lowers arm
-        else if ((gamepad1.dpad_down || gamepad2.dpad_down) &&
-            buttonPress == false && clawPosition > 0) {
-            clawPosition--;
-            if (clawPosition == 0) {
-                robot.extender.setTargetPosition(15);
-                robot.extender.setVelocity(armSpeed);
-                buttonPress = true;
-            }
-            else if (clawPosition == 1) {
-                robot.extender.setTargetPosition(171);
-                robot.extender.setVelocity(armSpeed);
-                buttonPress = true;
-            }
-            else if (clawPosition == 2) {
-                robot.extender.setTargetPosition(1230);
-                robot.extender.setVelocity(armSpeed);
-                buttonPress = true;
-            }
-            else if (clawPosition == 3) {
-                robot.extender.setTargetPosition(2117);
-                robot.extender.setVelocity(armSpeed);
-                buttonPress = true;
-            }
-            
-        }
+     
         
         // Right trigger manually adjusts the claw up
         else if (gamepad1.right_trigger > 0.5) {
@@ -189,33 +134,7 @@ public class TankMode extends OpMode {
             buttonPressDown = true;
             buttonPressUp = false;
         }
-        
-        
-        // Left trigger manually adjusts the claw down
-        else if (gamepad1.left_trigger > 0.5 ) {
-            
-            robot.extender.setPower(-0.5);
-            buttonPressUp = true;
-            buttonPressDown = false;
-        }
-        
-        else if (gamepad1.dpad_up || gamepad2.dpad_up || gamepad1.dpad_down || gamepad2.dpad_down) {
-            
-        }
-        
-        // D-pad left opens claw
-        else if (gamepad1.dpad_left || gamepad2.dpad_left) {
-            // robot.servo1.setPosition(0.2);
-            robot.servo1.setPosition(1);
-        }
-        
-        // D-pad right closes claw
-        else if (gamepad1.dpad_right || gamepad2.dpad_right) {
-            //robot.servo1.setPosition(0.0);
-            //robot.servo2.setPosition(0.5);
-            robot.servo1.setPosition(0.05);
-        }
-        
+
         // Keeps motors off when nothing is pressed
         else {
             buttonPress = false;
