@@ -158,7 +158,11 @@ public class TankMode extends OpMode {
             buttonPressUp = true;
             buttonPressDown = false;
         }
-            
+
+        else if (gamepad1.dpad_left || gamepad2.dpad_left) {
+            robot.servo2.setPower(-0.5);
+        }
+
 
         // Keeps motors off when nothing is pressed
         else {
