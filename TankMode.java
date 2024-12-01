@@ -46,7 +46,7 @@ public class TankMode extends OpMode {
         robot.leftBackDrive.setPower(0);
         robot.rightFrontDrive.setPower(0);
         robot.rightBackDrive.setPower(0);
-        // robot.extender.setPower(0);
+        robot.extender.setPower(0);
         robot.servo1.setPosition(0.3);
         robot.servo2.setPosition(0.2);
         // robot.servo1.setPosition(0);
