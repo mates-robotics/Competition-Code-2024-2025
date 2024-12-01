@@ -75,6 +75,8 @@ public class TankMode extends OpMode {
     
     // speedSelected: 4 = low, 2 = med, 1 = high
     int speedSelected = 2; // temp
+
+    int extension = 0;
     
     // Code that runs repeatedly after the driver hits PLAY, but before they hit STOP
     @Override
@@ -128,12 +130,13 @@ public class TankMode extends OpMode {
      
         
         else if ((gamepad1.dpad_up || gamepad2.dpad_up && buttonPress == false){
+            extension++;
             robot.extender.setTargetPosition(0);
             robot.extender.setVelocity(armSpeed);
             buttonPress = true;
         }
 
-        else if ((gamepad1.dpad_down || gamepad2.dpad_down) && buttonPress == false){
+        else if ((gamepad1.dpad_down || gamepad2.dpad_down) && (buttonPress == false || exntesion == 1)){
             robot.extender.setTargetPosition(171);
             robot.extender.setVelocity(armSpeed);
             buttonPress = true;
