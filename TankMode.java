@@ -127,13 +127,35 @@ public class TankMode extends OpMode {
         
      
         
-        // Right trigger manually adjusts the claw up
+        else if ((gamepad1.dpad_up || gamepad2.dpad_up && buttonPress == false){
+            robot.extender.setTargetPosition(0);
+            robot.extender.setVelocity(armSpeed);
+            buttonPress = true;
+        }
+
+        else if ((gamepad1.dpad_down || gamepad2.dpad_down) && buttonPress == false){
+            robot.extender.setTargetPosition(171);
+            robot.extender.setVelocity(armSpeed);
+            buttonPress = true;
+        }
+
+                // Right trigger manually adjusts the claw up
         else if (gamepad1.right_trigger > 0.5) {
             
             robot.extender.setPower(-0.1);
             buttonPressDown = true;
             buttonPressUp = false;
         }
+        
+        
+        // Left trigger manually adjusts the claw down
+        else if (gamepad1.left_trigger > 0.5 ) {
+            
+            robot.extender.setPower(-0.5);
+            buttonPressUp = true;
+            buttonPressDown = false;
+        }
+            
 
         // Keeps motors off when nothing is pressed
         else {
