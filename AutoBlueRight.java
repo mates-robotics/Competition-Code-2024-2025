@@ -43,7 +43,7 @@ public class AutoBlueRight extends LinearOpMode{
         methods.strafe(0, 1000);
         //robot.extender.setVelocity(500000);
         methods.drive(10, 1000);
-        
+        break;
         
         //robot.extender.setTargetPosition(2117);
         //methods.extend_precise(-90);
