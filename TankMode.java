@@ -145,7 +145,7 @@ public class TankMode extends OpMode {
                 // Right trigger manually adjusts the claw up
         else if (gamepad1.right_trigger > 0.5) {
             
-            robot.extender.setPower(-0.1);
+            robot.extender.setPower(0.5);
             buttonPressDown = true;
             buttonPressUp = false;
         }
