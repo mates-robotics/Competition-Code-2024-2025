@@ -131,7 +131,7 @@ public class TankMode extends OpMode {
         
         else if ((gamepad1.dpad_up || gamepad2.dpad_up && buttonPress == false){
             extension++;
-            robot.extender.setTargetPosition(0);
+            robot.extender.setTargetPosition(100);
             robot.extender.setVelocity(armSpeed);
             buttonPress = true;
         }
