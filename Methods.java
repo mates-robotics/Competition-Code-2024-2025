@@ -126,42 +126,9 @@ public class Methods {
         // rightBackDrive.setVelocity(0);
     }
         
-        
-    // Tatget position values: 0 = floor, 1 = ground, 2 = low, 3 = med, 4 = high
-    // Spool diameter: 12 cm or 4.72 inches
-    // The thingys are at 1.5, 13, 23, and 33 inches high
-    //public void extend(int targetPosition) {
-        // set the extender to use encoders
-        //extender.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        
-        // Set the target position depending on the method input
-        //switch(targetPosition) {
-    //         case 0: // Floor
-    //             //extender.setTargetPosition(0);
-    //             break;
-    //         case 1: // Ground terminal
-    //             //extender.setTargetPosition(171);
-    //             break;
-    //         case 2: // Low terminal
-    //             //extender.setTargetPosition(1230);
-    //             break;
-    //         case 3: // Medium terminal
-    //             //extender.setTargetPosition(2117);
-    //             break;
-    //         case 4: // High terminal
-    //             //extender.setTargetPosition(2906);
-    //             break;
-    //     }
-        
-    //     //while(Math.abs(extender.getTargetPosition() - extender.getCurrentPosition()) >= 5) {
-    //         //extender.setVelocity(2000);
-    //     }
-        
-    // }
     
     public void extend_precise(int targetPosition) {
         // set the extender to use encoders
-        
         
         extender.setTargetPosition(extender.getCurrentPosition() + targetPosition);
         extender.setMode(DcMotor.RunMode.RUN_TO_POSITION);
@@ -169,16 +136,6 @@ public class Methods {
             extender.setVelocity(2000);
         }
     }
-    
-    // public void claw(boolean open) {
-    //     if (open) {
-    //         //servo1.setPosition(0.25);
-    //         //servo2.setPosition(0.3);
-    //     } else {
-    //         //servo1.setPosition(0.05);
-    //         //servo2.setPosition(0.5);
-    //     }
-    // }
     
     public void strafe(int distance, int speed) { //negative is left, positive is right
         leftBackDrive.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
